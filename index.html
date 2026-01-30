@@ -1,0 +1,2286 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DHC WebSolutions | Sites que vendem e escalam</title>
+    <meta
+      name="description"
+      content="DHC WebSolutions cria sites e landing pages de alta performance com foco em conversao, SEO e velocidade. Projetos sob medida e suporte proativo."
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!--ds-->
+    <style>
+      :root {
+        --bg: #000000;
+        --surface: #0a0a0a;
+        --surface-2: #0f0f0f;
+        --ink: #ffffff;
+        --muted: #9ca3af;
+        --line: #1f1f1f;
+        --primary: #3b82f6;
+        --secondary: #60a5fa;
+        --accent: #2563eb;
+        --success: #10b981;
+        --radius: 16px;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          system-ui,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .bg-waves {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.35;
+        overflow: hidden;
+      }
+
+      .bg-waves svg {
+        position: absolute;
+        width: 160%;
+        height: 60vh;
+        left: -30%;
+        filter: blur(10px);
+      }
+
+      .bg-waves .wave-top {
+        top: 10vh;
+        animation: wave-drift 22s linear infinite;
+      }
+
+      .bg-waves .wave-mid {
+        top: 45vh;
+        opacity: 0.5;
+        animation: wave-drift 28s linear infinite reverse;
+      }
+
+      .bg-waves .wave-low {
+        top: 75vh;
+        opacity: 0.35;
+        animation: wave-drift 34s linear infinite;
+      }
+
+      @keyframes wave-drift {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(20%);
+        }
+      }
+
+      main,
+      footer,
+      header {
+        position: relative;
+        z-index: 1;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1200px, 90vw);
+        margin: 0 auto;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+        gap: 4px;
+      }
+
+      .brand-main {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-code {
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 1rem;
+        color: #6ea8ff;
+        text-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+      }
+
+      .brand-logo {
+        height: 52px;
+        width: auto;
+        object-fit: contain;
+        filter: brightness(1.1) saturate(1.6)
+          drop-shadow(0 0 6px rgba(59, 130, 246, 0.6))
+          drop-shadow(0 0 16px rgba(96, 165, 250, 0.7))
+          drop-shadow(0 0 28px rgba(59, 130, 246, 0.45));
+      }
+
+      .brand-word {
+        background: linear-gradient(135deg, #5cb6ff, #1f6bff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .brand-sub {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 0.02em;
+      }
+
+      nav ul {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      nav a {
+        color: var(--muted);
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      nav a:hover {
+        color: var(--ink);
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      nav a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .nav-cta {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .btn {
+        padding: 9px 20px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        font-size: 0.9rem;
+        line-height: 1;
+        min-height: 36px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        background: none;
+        color: inherit;
+      }
+
+      .btn.primary {
+        background: var(--primary);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+      }
+
+      .btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+      }
+
+      .btn.ghost {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+      }
+
+      .btn.ghost:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        color: var(--ink);
+      }
+
+      .menu-toggle {
+        display: none;
+        border: none;
+        background: transparent;
+        color: var(--ink);
+        font-size: 1.6rem;
+        cursor: pointer;
+      }
+
+      main {
+        padding-top: 80px;
+      }
+
+      .hero {
+        padding: 120px 0 100px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -300px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        background: rgba(59, 130, 246, 0.1);
+        color: var(--primary);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        margin-bottom: 24px;
+        font-weight: 500;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .hero h1 span {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 1.15rem;
+        max-width: 580px;
+        margin-bottom: 32px;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 50px;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .stat {
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .stat strong {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 4px;
+        font-weight: 700;
+      }
+
+      .stat div {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .hero-visual {
+        position: relative;
+        height: 500px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          rgba(15, 15, 15, 0.8),
+          rgba(10, 10, 10, 0.5)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-visual::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(59, 130, 246, 0.2),
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      .hero-visual-inner {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .visual-card {
+        background: rgba(15, 15, 15, 0.9);
+        border-radius: 12px;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .visual-card strong {
+        font-size: 3rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .visual-card span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .section {
+        padding: 100px 0;
+        position: relative;
+        z-index: 0;
+      }
+
+      .section::before {
+        content: "";
+        position: absolute;
+        top: 24px;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(1200px, 90vw);
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(
+          180deg,
+          rgba(59, 130, 246, 0.12),
+          transparent 35%
+        );
+        pointer-events: none;
+      }
+
+      .section.no-frame::before {
+        content: none;
+      }
+
+      .section > .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-title {
+        margin-bottom: 60px;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        margin-bottom: 16px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .section-title p {
+        color: var(--muted);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .section-title.with-wings {
+        padding-top: 40px;
+      }
+
+      .section-title.with-wings::before,
+      .section-title.with-wings::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 38vw;
+        max-width: 520px;
+        height: 180px;
+        background: linear-gradient(180deg, #071128 0%, #02060f 85%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        z-index: -1;
+      }
+
+      .section-title.with-wings::before {
+        left: calc(50% - 50vw);
+        border-top-right-radius: 999px;
+        border-bottom-right-radius: 48px;
+      }
+
+      .section-title.with-wings::after {
+        right: calc(50% - 50vw);
+        border-top-left-radius: 999px;
+        border-bottom-left-radius: 48px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .grid.services {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .card {
+        background:
+          linear-gradient(var(--surface), var(--surface)) padding-box,
+          linear-gradient(
+              135deg,
+              rgba(59, 130, 246, 0.55),
+              rgba(96, 165, 250, 0.35),
+              rgba(37, 99, 235, 0.55)
+            )
+            border-box;
+        border-radius: var(--radius);
+        padding: 32px;
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: visible;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        background:
+          linear-gradient(var(--surface), var(--surface)) padding-box,
+          linear-gradient(
+              135deg,
+              rgba(59, 130, 246, 0.85),
+              rgba(96, 165, 250, 0.6),
+              rgba(37, 99, 235, 0.85)
+            )
+            border-box;
+      }
+
+      .card h3 {
+        margin: 20px 0 12px;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .icon-pill {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: rgba(59, 130, 246, 0.1);
+        display: grid;
+        place-items: center;
+        font-size: 1.3rem;
+      }
+
+      .steps {
+        display: grid;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .steps li {
+        list-style: none;
+        background: var(--surface);
+        padding: 32px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: grid;
+        gap: 12px;
+        position: relative;
+        overflow: visible;
+        transition: all 0.3s ease;
+      }
+
+      .steps li::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: var(--radius);
+        padding: 1px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .steps li:hover::before {
+        opacity: 1;
+      }
+
+      .steps li:hover {
+        transform: translateX(8px);
+      }
+
+      .steps span {
+        font-weight: 600;
+        color: var(--primary);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .steps h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .projects {
+        overflow: hidden;
+      }
+
+      .portfolio-marquee {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 0 30px;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+      }
+
+      .portfolio-marquee::before,
+      .portfolio-marquee::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 120px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .portfolio-marquee::before {
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0)
+        );
+      }
+
+      .portfolio-marquee::after {
+        right: 0;
+        background: linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0)
+        );
+      }
+
+      .portfolio-track {
+        display: flex;
+        gap: 24px;
+        width: max-content;
+        animation: portfolio-scroll 48s linear infinite;
+      }
+
+      .portfolio-marquee:hover .portfolio-track {
+        animation-play-state: paused;
+      }
+
+      .portfolio-item {
+        flex: 0 0 auto;
+        width: min(360px, 78vw);
+      }
+
+      .portfolio-card {
+        position: relative;
+        display: grid;
+        gap: 14px;
+        padding: 18px;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(
+          135deg,
+          rgba(15, 15, 15, 0.92),
+          rgba(10, 10, 10, 0.65)
+        );
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-6px) scale(1.01);
+        border-color: rgba(96, 165, 250, 0.5);
+      }
+
+      .portfolio-media {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .portfolio-media img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.05) 0%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        opacity: 0;
+        transform: translateY(12px);
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+      }
+
+      .portfolio-card:hover .portfolio-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .portfolio-content h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .portfolio-meta {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .portfolio-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      @keyframes portfolio-scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .pricing {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .price-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 36px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: grid;
+        gap: 24px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: visible;
+      }
+
+      .price-card::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: var(--radius);
+        padding: 1px;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .price-card:hover::before {
+        opacity: 1;
+      }
+
+      .price-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .price-card.featured::before {
+        opacity: 1;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+      }
+
+      .price-card.expresso {
+        position: relative;
+        border-color: rgba(96, 165, 250, 0.35);
+        background: linear-gradient(
+          180deg,
+          rgba(37, 99, 235, 0.28),
+          rgba(10, 10, 10, 0.82)
+        );
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.55),
+          0 0 40px rgba(96, 165, 250, 0.55),
+          0 0 60px rgba(37, 99, 235, 0.35);
+      }
+
+      .expresso-badge {
+        position: absolute;
+        top: -14px;
+        right: 24px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(252, 193, 83, 0.18);
+        border: 1px solid rgba(252, 193, 83, 0.45);
+        color: #fcc153;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .expresso-badge svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+
+      .price-card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .price-card .price {
+        font-size: 3rem;
+        font-weight: 800;
+      }
+
+      .price-card .price span {
+        font-size: 1rem;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .price-card ul {
+        list-style: none;
+        display: grid;
+        gap: 14px;
+        color: var(--muted);
+      }
+
+      .price-card li::before {
+        content: "✓";
+        color: var(--primary);
+        font-weight: 700;
+        margin-right: 10px;
+      }
+
+      .testimonial {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .testimonial blockquote {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: grid;
+        gap: 16px;
+        position: relative;
+        overflow: visible;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 999px;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+        justify-self: center;
+      }
+
+      .testimonial blockquote::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: var(--radius);
+        padding: 1px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .testimonial blockquote:hover::before {
+        opacity: 1;
+      }
+
+      .testimonial blockquote:hover {
+        transform: translateY(-4px);
+      }
+
+      .testimonial p {
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .testimonial strong {
+        color: var(--ink);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .faq {
+        display: grid;
+        gap: 16px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      details {
+        background: var(--surface);
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 24px;
+        position: relative;
+        overflow: visible;
+        transition: all 0.3s ease;
+      }
+
+      details::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: var(--radius);
+        padding: 1px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      details:hover::before {
+        opacity: 1;
+      }
+
+      details[open]::before {
+        opacity: 1;
+      }
+
+      summary {
+        cursor: pointer;
+        list-style: none;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      summary::after {
+        content: "+";
+        font-size: 1.3rem;
+        color: var(--primary);
+        font-weight: 300;
+      }
+
+      details[open] summary::after {
+        content: "−";
+      }
+
+      details p {
+        color: var(--muted);
+        margin-top: 16px;
+        line-height: 1.7;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--surface);
+        color: var(--ink);
+        font-family: inherit;
+        font-size: 0.95rem;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      footer {
+        padding: 60px 0 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #0f0f0f;
+        display: grid;
+        place-items: center;
+        color: #ffffff;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        z-index: 200;
+      }
+
+      .floating-whatsapp::before,
+      .floating-whatsapp::after {
+        content: none;
+      }
+
+      .floating-whatsapp:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+      }
+
+      .floating-whatsapp img {
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+      }
+
+      [data-animate] {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      [data-animate].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 900px) {
+        nav ul {
+          position: fixed;
+          top: 76px;
+          right: 5vw;
+          background: rgba(10, 10, 10, 0.98);
+          border-radius: 16px;
+          padding: 24px;
+          flex-direction: column;
+          gap: 20px;
+          transform: translateX(120%);
+          transition: transform 0.3s ease;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.nav-open nav ul {
+          transform: translateX(0);
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+        }
+
+        .nav-cta {
+          display: none;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .hero-visual {
+          height: 400px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .portfolio-item {
+          width: min(300px, 85vw);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#top">
+          <span class="brand-text">
+            <span class="brand-main">
+              <img
+                class="brand-logo"
+                src="logo/DHC%20WebSolution.png"
+                alt="DHC WebSolution"
+              />
+              <span class="brand-word"></span>
+            </span>
+            <span class="brand-sub"></span>
+          </span>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#processo">Processo</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn ghost" href="#portfolio">Ver cases</a>
+          <a class="btn primary" href="#contato">Solicitar proposta</a>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      </div>
+    </header>
+
+    <div class="bg-waves" aria-hidden="true">
+      <svg class="wave-top" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path
+          fill="rgba(59, 130, 246, 0.35)"
+          d="M0,224L60,218.7C120,213,240,203,360,176C480,149,600,107,720,106.7C840,107,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+        ></path>
+      </svg>
+      <svg class="wave-mid" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path
+          fill="rgba(37, 99, 235, 0.28)"
+          d="M0,288L80,272C160,256,320,224,480,218.7C640,213,800,235,960,245.3C1120,256,1280,256,1360,256L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <svg class="wave-low" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path
+          fill="rgba(96, 165, 250, 0.22)"
+          d="M0,256L100,240C200,224,400,192,600,170.7C800,149,1000,139,1200,154.7C1400,171,1600,213,1700,234.7L1800,256L1800,0L1700,0C1600,0,1400,0,1200,0C1000,0,800,0,600,0C400,0,200,0,100,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div data-animate>
+            <span class="badge">Performance + Design Estratégico</span>
+            <h1>Sites que <span>geram vendas reais</span> para seu negócio.</h1>
+            <p>
+              Somos especialistas em sites institucionais e landing pages com
+              velocidade de verdade, SEO técnico e foco em conversão. Do
+              briefing ao lançamento, tudo alinhado a metas claras.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#contato"
+                >Quero um site de alta conversão</a
+              >
+              <a class="btn ghost" href="#planos">Ver planos</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>98%</strong>
+                <div>Entregas no prazo</div>
+              </div>
+              <div class="stat">
+                <strong>2.1s</strong>
+                <div>Média de carregamento</div>
+              </div>
+              <div class="stat">
+                <strong>320+</strong>
+                <div>Projetos no Brasil</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" data-animate>
+            <div class="hero-visual-inner">
+              <div class="visual-card">
+                <strong>+132%</strong>
+                <span>Mais leads em 30 dias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos" class="section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Serviços que impulsionam o seu negócio</h2>
+            <p>
+              Combine estratégia, design e tecnologia em um único fluxo, sem
+              improvisos nem atrasos.
+            </p>
+          </div>
+          <div class="grid services">
+            <div class="card" data-animate>
+              <div class="icon-pill">⚡</div>
+              <h3>Sites institucionais</h3>
+              <p>
+                Estrutura completa para posicionar sua marca, com storytelling e
+                navegação inteligente.
+              </p>
+            </div>
+            <div class="card" data-animate>
+              <div class="icon-pill">🚀</div>
+              <h3>Landing pages</h3>
+              <p>
+                Páginas de alta conversão para campanhas, lançamentos e captura
+                de leads.
+              </p>
+            </div>
+            <div class="card" data-animate>
+              <div class="icon-pill">📈</div>
+              <h3>SEO estratégico</h3>
+              <p>
+                Otimizações técnicas, esquema de dados e estrutura pronta para
+                ranquear.
+              </p>
+            </div>
+            <div class="card" data-animate>
+              <div class="icon-pill">🔗</div>
+              <h3>Integrações</h3>
+              <p>
+                CRM, WhatsApp, automações e dashboards para medir resultados
+                desde o primeiro dia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="processo" class="section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Processo claro, prazos respeitados</h2>
+            <p>
+              Transparência total para você acompanhar cada etapa com
+              previsibilidade.
+            </p>
+          </div>
+          <ol class="steps">
+            <li data-animate>
+              <span>01. Diagnóstico</span>
+              <h3>Briefing e estratégia</h3>
+              <p>
+                Mapeamos objetivos, público e referências para direcionar o
+                projeto desde o início.
+              </p>
+            </li>
+            <li data-animate>
+              <span>02. Experiência</span>
+              <h3>Arquitetura e copy</h3>
+              <p>
+                Organizamos páginas, argumentos e CTAs para maximizar conversão
+                e navegação.
+              </p>
+            </li>
+            <li data-animate>
+              <span>03. Execução</span>
+              <h3>Design e desenvolvimento</h3>
+              <p>
+                Layout premium e código otimizado, com foco em desempenho e
+                responsividade.
+              </p>
+            </li>
+            <li data-animate>
+              <span>04. Lançamento</span>
+              <h3>QA, SEO e métricas</h3>
+              <p>
+                Checklist técnico, configuração de tags e acompanhamento
+                pós-lançamento.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section projects no-frame">
+        <div class="container">
+          <div class="section-title">
+            <h2>Projetos em Destaque</h2>
+            <p>Trabalhos reais que mostram evolução e domínio técnico.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-marquee" aria-label="Portfólio em destaque">
+          <div class="portfolio-track">
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    src="img/ia-music-mode.png"
+                    alt="IA Mode Music"
+                    loading="lazy"
+                  />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://ia-mode-music.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>IA Mode Music</h3>
+                  <p class="portfolio-meta">
+                    App de música com IA, cadastro e login com segurança.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">IA</span>
+                    <span class="tag">Auth</span>
+                    <span class="tag">Next.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    src="img/bemvindoalourencoalimentos.png"
+                    alt="Lourenço Alimentos"
+                    loading="lazy"
+                  />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://bemvindoalourencoalimentos.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Bem Vindo a Lourenço Alimentos</h3>
+                  <p class="portfolio-meta">
+                    Site institucional desenvolvido para a marca.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Branding</span>
+                    <span class="tag">Site</span>
+                    <span class="tag">UI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/aqualou.png" alt="Aqua Lou" loading="lazy" />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://suportelourenco1756927928000.0600361.meusitehostgator.com.br/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Aqua Lou</h3>
+                  <p class="portfolio-meta">
+                    Lembrete interativo de hidratação com metas personalizadas.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">UX</span>
+                    <span class="tag">Gamificação</span>
+                    <span class="tag">Web App</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    src="img/Faq.png"
+                    alt="FAQ para Empresa"
+                    loading="lazy"
+                  />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://suportelourenco1756927478000.0600361.meusitehostgator.com.br/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>FAQ para Empresa</h3>
+                  <p class="portfolio-meta">
+                    Página de suporte organizada por tópicos e navegação fácil.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Suporte</span>
+                    <span class="tag">UX</span>
+                    <span class="tag">Layout</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/Advocacia MR.png" alt="Site para Advogado" />
+                  <div class="portfolio-overlay">
+                    <a href="advogado/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Advocacia MR</h3>
+                  <p class="portfolio-meta">
+                    Página profissional com foco em credibilidade e serviços.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Institucional</span>
+                    <span class="tag">Credibilidade</span>
+                    <span class="tag">Serviços</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/studiovale.png" alt="Site para Arquiteto" />
+                  <div class="portfolio-overlay">
+                    <a href="arquiteto/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Studio Vale</h3>
+                  <p class="portfolio-meta">
+                    Portfólio visual com identidade minimalista e elegante.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Portfólio</span>
+                    <span class="tag">Minimal</span>
+                    <span class="tag">Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/Luz E Brilho.png" alt="Site para Diarista" />
+                  <div class="portfolio-overlay">
+                    <a href="diarista/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Luz E Brilho</h3>
+                  <p class="portfolio-meta">
+                    Página direta com CTA rápido para WhatsApp.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Serviços</span>
+                    <span class="tag">WhatsApp</span>
+                    <span class="tag">Conversão</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/Clinica Moraes.png" alt="Site para Psicólogo" />
+                  <div class="portfolio-overlay">
+                    <a href="psicologo/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Clinica Moraes</h3>
+                  <p class="portfolio-meta">
+                    Página acolhedora para apresentação e agendamento.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Saúde</span>
+                    <span class="tag">Empatia</span>
+                    <span class="tag">Agendamento</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    src="img/ia-music-mode.png"
+                    alt="IA Mode Music"
+                    loading="lazy"
+                  />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://ia-mode-music.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>IA Music Mode</h3>
+                  <p class="portfolio-meta">
+                    App de música com IA, cadastro e login com segurança.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">IA</span>
+                    <span class="tag">Auth</span>
+                    <span class="tag">Next.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    src="img/bemvindoalourencoalimentos.png"
+                    alt="Lourenço Alimentos"
+                    loading="lazy"
+                  />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://bemvindoalourencoalimentos.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Bem Vindo a Lourenço Alimentos</h3>
+                  <p class="portfolio-meta">
+                    Site institucional desenvolvido para a marca.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Branding</span>
+                    <span class="tag">Site</span>
+                    <span class="tag">UI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/aqualou.png" alt="Aqua Lou" loading="lazy" />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://suportelourenco1756927928000.0600361.meusitehostgator.com.br/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Aqua Lou</h3>
+                  <p class="portfolio-meta">
+                    Lembrete interativo de hidratação com metas personalizadas.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">UX</span>
+                    <span class="tag">Gamificação</span>
+                    <span class="tag">Web App</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    src="img/Faq.png"
+                    alt="FAQ para Empresa"
+                    loading="lazy"
+                  />
+                  <div class="portfolio-overlay">
+                    <a
+                      href="https://suportelourenco1756927478000.0600361.meusitehostgator.com.br/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>FAQ para Empresa</h3>
+                  <p class="portfolio-meta">
+                    Página de suporte organizada por tópicos e navegação fácil.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Suporte</span>
+                    <span class="tag">UX</span>
+                    <span class="tag">Layout</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/advogado.png" alt="Site para Advogado" />
+                  <div class="portfolio-overlay">
+                    <a href="advogado/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Site para Advogado</h3>
+                  <p class="portfolio-meta">
+                    Página profissional com foco em credibilidade e serviços.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Institucional</span>
+                    <span class="tag">Credibilidade</span>
+                    <span class="tag">Serviços</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/arquiteto.png" alt="Site para Arquiteto" />
+                  <div class="portfolio-overlay">
+                    <a href="arquiteto/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Site para Arquiteto</h3>
+                  <p class="portfolio-meta">
+                    Portfólio visual com identidade minimalista e elegante.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Portfólio</span>
+                    <span class="tag">Minimal</span>
+                    <span class="tag">Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/diarista.png" alt="Site para Diarista" />
+                  <div class="portfolio-overlay">
+                    <a href="diarista/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Site para Diarista</h3>
+                  <p class="portfolio-meta">
+                    Página direta com CTA rápido para WhatsApp.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Serviços</span>
+                    <span class="tag">WhatsApp</span>
+                    <span class="tag">Conversão</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <div class="portfolio-card">
+                <div class="portfolio-media">
+                  <img src="img/psicologo.png" alt="Site para Psicólogo" />
+                  <div class="portfolio-overlay">
+                    <a href="psicologo/index.html" class="btn primary"
+                      >Abrir projeto</a
+                    >
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>Site para Psicólogo</h3>
+                  <p class="portfolio-meta">
+                    Página acolhedora para apresentação e agendamento.
+                  </p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Saúde</span>
+                    <span class="tag">Empatia</span>
+                    <span class="tag">Agendamento</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="planos" class="section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Planos e formatos sob medida</h2>
+            <p>
+              Escolha o formato ideal ou solicite um projeto totalmente
+              personalizado.
+            </p>
+          </div>
+          <div class="grid pricing">
+            <div class="price-card expresso" data-animate>
+              <div class="expresso-badge">
+                Melhor escolha
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="512"
+                  height="512"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                >
+                  <g>
+                    <path
+                      d="m267.5 319.616-14.567 46.756L206.177 512l-32.957-63.616-62.848 32.957 22.994-72.048 38.323-120.336 60.549 19.165z"
+                      fill="#dd4e4e"
+                    ></path>
+                    <path
+                      d="m340.311 288.957 61.317 192.384-62.848-32.957L305.823 512 244.5 319.616z"
+                      fill="#dd4e4e"
+                    ></path>
+                    <path
+                      d="m437.652 195.451-26.06-31.427 19.164-35.256-34.494-19.932 5.366-39.854-39.854-6.134-9.963-39.086-39.092 9.195L289.725 0 256 22.226 222.275 0l-22.994 32.957-39.092-9.195-9.963 39.086-39.854 6.134 5.366 39.854-34.494 19.932 19.164 35.256-26.06 31.427 31.426 26.056-13.03 38.328 38.323 13.025 2.299 40.627 39.854-1.536 16.865 36.793 36.787-16.098L256 361.006l29.128-28.36 36.787 16.098 16.865-36.793 39.854 1.536 2.299-40.627 38.323-13.025-13.03-38.328z"
+                      fill="#fcc153"
+                    ></path>
+                    <circle
+                      cx="256"
+                      cy="180.122"
+                      r="126.469"
+                      fill="#eda024"
+                    ></circle>
+                    <path
+                      d="m233.774 240.671-53.652-53.652c-5.366-5.366-5.366-13.798 0-19.164 5.366-5.366 13.798-5.366 19.164 0l35.256 35.256 78.945-78.945c5.366-5.366 13.798-5.366 19.164 0 5.366 5.366 5.366 13.798 0 19.164l-98.877 97.341z"
+                      fill="#f7f7f7"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="expresso-head">
+                <h3>Site Expresso</h3>
+                <p class="expresso-sub">Rapido e objetivo</p>
+              </div>
+              <div class="expresso-price">
+                <div class="expresso-label">A partir de</div>
+                <div class="expresso-value">
+                  <div class="price">R$ 600 <span>/ projeto</span></div>
+                </div>
+              </div>
+              <div class="expresso-highlight">
+                <p>
+                  <strong>Ideal para:</strong> validar oferta e captar leads
+                  rapidamente.
+                </p>
+              </div>
+              <ul class="expresso-list">
+                <li>
+                  <span class="check">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg>
+                  </span>
+                  <span>1 pagina (landing/one-page) ate 6 seções</span>
+                </li>
+                <li>
+                  <span class="check">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg>
+                  </span>
+                  <span>Layout responsivo (mobile-first)</span>
+                </li>
+                <li>
+                  <span class="check">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg>
+                  </span>
+                  <span>WhatsApp + formulario integrado</span>
+                </li>
+                <li>
+                  <span class="check">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg>
+                  </span>
+                  <span>SEO essencial incluido</span>
+                </li>
+                <li>
+                  <span class="check">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg>
+                  </span>
+                  <span>Performance otimizada</span>
+                </li>
+              </ul>
+              <div class="expresso-timeline">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>5 a 10 dias uteis</span>
+              </div>
+              <a
+                class="btn expresso-cta"
+                href="https://wa.link/szgyc3"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Quero o Site Expresso</a
+              >
+            </div>
+            <div class="price-card" data-animate>
+              <h3>Site Essencial</h3>
+              <div class="price">R$ 2.900 <span>/ projeto</span></div>
+              <ul>
+                <li>Site de até 5 páginas</li>
+                <li>Design responsivo premium</li>
+                <li>SEO base e performance</li>
+                <li>Entrega em 20 dias</li>
+              </ul>
+              <a class="btn ghost" href="#contato">Solicitar proposta</a>
+            </div>
+            <div class="price-card featured" data-animate>
+              <h3>Site Performance</h3>
+              <div class="price">R$ 5.500 <span>/ projeto</span></div>
+              <ul>
+                <li>Arquitetura completa e copy</li>
+                <li>SEO técnico + schema</li>
+                <li>Integrações e analytics</li>
+                <li>Entrega em 30 dias</li>
+              </ul>
+              <a class="btn primary" href="#contato">Quero esse plano</a>
+            </div>
+            <div class="price-card" data-animate>
+              <h3>Projeto Enterprise</h3>
+              <div class="price">Sob consulta</div>
+              <ul>
+                <li>Experiência full custom</li>
+                <li>Squad dedicado</li>
+                <li>Automações e CRM</li>
+                <li>Suporte contínuo</li>
+              </ul>
+              <a class="btn ghost" href="#contato">Falar com especialista</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Resultados que falam por si</h2>
+            <p>
+              Clientes que confiaram na DHC WebSolutions e viram suas metas
+              acontecerem.
+            </p>
+          </div>
+          <div class="testimonial">
+            <blockquote data-animate>
+              <img
+                class="testimonial-avatar"
+                src="img/Maria%20Campos.jpg"
+                alt="Maria Campos"
+                loading="lazy"
+              />
+              <p>
+                "A DHC redesenhou nosso site e o volume de leads dobrou em menos
+                de 60 dias. Fluxo impecável."
+              </p>
+              <strong>- Maria Campos, Bright Systems</strong>
+            </blockquote>
+            <blockquote data-animate>
+              <img
+                class="testimonial-avatar"
+                src="img/Lucas%20Vidal.jpg"
+                alt="Lucas Vidal"
+                loading="lazy"
+              />
+              <p>
+                "Equipe parceira. Entregaram no prazo e com performance
+                incrível. Nosso Google Ads agradeceu."
+              </p>
+              <strong>- Lucas Vidal, Atlas Logistics</strong>
+            </blockquote>
+            <blockquote data-animate>
+              <img
+                class="testimonial-avatar"
+                src="img/jean%20Luckal.jpg"
+                alt="Jean Luckal"
+                loading="lazy"
+              />
+              <p>
+                "Design sofisticado e copy alinhada ao nosso posicionamento.
+                Resultado direto em vendas."
+              </p>
+              <strong>- Jean Luckal, Viva Clinics</strong>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Perguntas frequentes</h2>
+            <p>Respostas diretas para facilitar sua decisão.</p>
+          </div>
+          <div class="faq">
+            <details data-animate>
+              <summary>Quanto tempo leva para entregar?</summary>
+              <p>
+                Projetos essenciais em até 20 dias. Projetos completos levam
+                entre 25 e 35 dias, dependendo da complexidade.
+              </p>
+            </details>
+            <details data-animate>
+              <summary>Vocês cuidam de hospedagem e domínio?</summary>
+              <p>
+                Sim. Podemos orientar na compra do domínio e configurar
+                hospedagem ou sugerir nosso stack recomendado.
+              </p>
+            </details>
+            <details data-animate>
+              <summary>Posso atualizar o site depois?</summary>
+              <p>
+                Sim. Entregamos treinamento e podemos oferecer pacotes de
+                manutenção e evolução contínua.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Vamos criar seu próximo site?</h2>
+            <p>
+              Preencha os dados e receba uma proposta em até 24 horas úteis.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <div class="card" data-animate>
+              <h3>Atendimento via WhatsApp</h3>
+              <p>
+                Clique no botão abaixo e fale direto com a nossa equipe. Já
+                preparamos um texto para facilitar.
+              </p>
+              <a
+                class="btn primary"
+                href="https://wa.link/szgyc3"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Falar no WhatsApp</a
+              >
+            </div>
+            <div class="card" data-animate>
+              <h3>Contato direto</h3>
+              <p>
+                Fale com a equipe DHC WebSolutions e receba orientação
+                personalizada.
+              </p>
+              <p><strong>Email:</strong> dhcwebsolutions@gmail.com</p>
+              <p>
+                <strong>WhatsApp:</strong>
+                <a href="https://wa.link/szgyc3" target="_blank">
+                  (19) 98237-9028
+                </a>
+              </p>
+              <p><strong>Horário:</strong> Seg a Sex, 9h às 18h</p>
+              <a class="btn ghost" href="mailto:dhcwebsolutions@gmail.com"
+                >Enviar e-mail</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div style="margin-bottom: 40px">
+          <div class="brand" style="margin-bottom: 16px">
+            <span class="brand-text">
+              <span class="brand-main">
+                <img
+                  class="brand-logo"
+                  src="logo/DHC%20WebSolution.png"
+                  alt="DHC WebSolution"
+                />
+                <span class="brand-word"></span>
+              </span>
+              <span class="brand-sub"></span>
+            </span>
+          </div>
+          <p>
+            Sites estratégicos, bonitos e rápidos. Vamos colocar sua empresa no
+            centro da conversa.
+          </p>
+        </div>
+        <div
+          style="
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+          "
+        >
+          2026 © DHC WebSolutions. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="floating-whatsapp"
+      href="https://wa.link/szgyc3"
+      aria-label="Falar no WhatsApp"
+    >
+      <img src="logo/logo.png" alt="WhatsApp" />
+    </a>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      menuToggle.addEventListener("click", () => {
+        document.body.classList.toggle("nav-open");
+      });
+
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", () =>
+          document.body.classList.remove("nav-open"),
+        );
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      document
+        .querySelectorAll("[data-animate]")
+        .forEach((el) => observer.observe(el));
+
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Obrigado! Recebemos seu briefing e responderemos em breve.");
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Space+Grotesk:wght@400;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+  --bg: #0c0f14;
+  --bg-soft: #141925;
+  --ink: #f6f2ea;
+  --muted: #b7b1a3;
+  --accent: #d6b16f;
+  --accent-2: #7c5c2e;
+  --card: #1c2332;
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Bodoni Moda", "Times New Roman", serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #1b2030, var(--bg));
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 8vw;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "Space Grotesk", "Arial", sans-serif;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.brand small {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+}
+
+.mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(140deg, var(--accent), #f0d29e);
+  color: #1a1410;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas:
+    "main image"
+    "secondary card";
+  gap: 48px;
+  padding: 40px 8vw 90px;
+  align-items: start;
+}
+
+.hero-main {
+  grid-area: main;
+}
+
+.hero-secondary {
+  grid-area: secondary;
+}
+
+.hero-photo {
+ grid-area: image;
+  min-height: 720px;
+  border-radius: var(--radius);
+  background:
+    #0f131b
+    url("../img/Dr.%20Marcelo%20Reis.png") center top / contain no-repeat;
+ box-shadow: 0 24px 60px rgba(123, 83, 72, 0.25);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-family: "Space Grotesk", "Arial", sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.hero-main h1 {
+  font-size: clamp(2.4rem, 3vw + 1.6rem, 4.2rem);
+  margin: 16px 0;
+}
+
+.lead {
+  font-family: "Space Grotesk", "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #1a1410;
+  text-decoration: none;
+  font-family: "Space Grotesk", "Arial", sans-serif;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.ghost {
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--muted);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: "Space Grotesk", "Arial", sans-serif;
+}
+
+.stats {
+  margin-top: 32px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  font-family: "Space Grotesk", "Arial", sans-serif;
+}
+
+.stats strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.stats span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.case-box {
+  grid-area: card;
+  background: linear-gradient(155deg, #20293b, #0f131b);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  font-family: "Space Grotesk", "Arial", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.case-box::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(214, 177, 111, 0.35);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.case-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.case-box h2 {
+  margin: 12px 0;
+  font-family: "Bodoni Moda", "Times New Roman", serif;
+  font-size: 2rem;
+}
+
+.case-footer {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.cta.dark {
+  background: var(--accent-2);
+  color: #f8f1e6;
+}
+
+.section {
+  padding: 70px 8vw;
+}
+
+.section h3 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.section-head {
+  max-width: 520px;
+}
+
+.method {
+  background: linear-gradient(120deg, #101522, #0b0f15);
+  border-top: 1px solid rgba(214, 177, 111, 0.15);
+  border-bottom: 1px solid rgba(214, 177, 111, 0.15);
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0 0;
+  display: grid;
+  gap: 18px;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  font-family: "Space Grotesk", "Arial", sans-serif;
+}
+
+.timeline span {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(214, 177, 111, 0.2);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  align-items: center;
+}
+
+.areas {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  font-family: "Space Grotesk", "Arial", sans-serif;
+  color: var(--muted);
+}
+
+.areas li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quote-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  font-family: "Space Grotesk", "Arial", sans-serif;
+  border-left: 3px solid var(--accent);
+}
+
+.quote {
+  font-size: 1.2rem;
+  margin: 0 0 18px;
+}
+
+.quote-meta {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.cta-band {
+  background: linear-gradient(135deg, #d6b16f, #8b6736);
+  color: #1b140c;
+  border-radius: var(--radius);
+  margin: 0 8vw 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 0 60px;
+  color: var(--muted);
+  font-family: "Space Grotesk", "Arial", sans-serif;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    padding: 20px 6vw;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "main"
+      "secondary"
+      "card";
+  }
+
+  .cta-band {
+    margin: 0 6vw 60px;
+    padding: 32px;
+  }
+}
