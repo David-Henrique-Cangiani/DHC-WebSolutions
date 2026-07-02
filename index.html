@@ -27,7 +27,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="logo/logo%20dhc.png" />
+    <link rel="icon" type="image/png" href="logo/dhc-logo-512.png" />
     <!--ds-->
     <style>
       :root {
@@ -182,13 +182,10 @@
       }
 
       .brand-logo {
-        height: 52px;
+        height: 46px;
         width: auto;
         object-fit: contain;
-        filter: brightness(1.1) saturate(1.6)
-          drop-shadow(0 0 6px rgba(59, 130, 246, 0.6))
-          drop-shadow(0 0 16px rgba(96, 165, 250, 0.7))
-          drop-shadow(0 0 28px rgba(59, 130, 246, 0.45));
+        filter: none;
       }
 
       .brand-word {
@@ -203,6 +200,22 @@
         font-weight: 600;
         color: rgba(255, 255, 255, 0.6);
         letter-spacing: 0.02em;
+      }
+      .brand-word,
+      .brand-sub {
+        display: none;
+      }
+
+      .no-logo .brand-logo {
+        display: none;
+      }
+
+      .no-logo .brand-word {
+        display: inline-block;
+      }
+
+      .no-logo .brand-sub {
+        display: block;
       }
 
       nav ul {
@@ -1379,9 +1392,9 @@
             <span class="brand-main">
               <img
                 class="brand-logo"
-                src="logo/dhc websolutions.png"
+                src="logo/dhc-lockup-dark.svg"
                 alt="DHC WebSolutions"
-                onerror="this.style.display='none'"
+                onerror="document.documentElement.classList.add('no-logo')"
               />
               <span class="brand-word">DHC</span>
             </span>
@@ -2387,9 +2400,9 @@
               <span class="brand-main">
                 <img
                   class="brand-logo"
-                  src="logo/dhc websolutions.png"
+                  src="logo/dhc-lockup-dark.svg"
                   alt="DHC WebSolutions"
-                  onerror="this.style.display='none'"
+                  onerror="document.documentElement.classList.add('no-logo')"
                 />
                 <span class="brand-word">DHC</span>
               </span>
