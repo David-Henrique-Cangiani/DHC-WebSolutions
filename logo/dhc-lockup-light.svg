@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" font-family="Poppins,'DejaVu Sans',sans-serif">
+  <defs>
+    <linearGradient id="cobalt" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#3b7bff"/>
+      <stop offset="1" stop-color="#173a97"/>
+    </linearGradient>
+  </defs>
+  <rect x="20" y="40" width="180" height="180" rx="44" fill="url(#cobalt)"/>
+  <text x="110" y="132" text-anchor="middle" dominant-baseline="central"
+        font-size="64" font-weight="700" fill="#ffffff" letter-spacing="-2">DHC</text>
+  <text x="238" y="132" dominant-baseline="central" font-size="80" letter-spacing="-1">
+    <tspan font-weight="700" fill="#0f2a5e">Web</tspan><tspan font-weight="400" fill="#5b6b86">Solutions</tspan>
+  </text>
+</svg>
